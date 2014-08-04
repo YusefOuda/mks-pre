@@ -1,8 +1,18 @@
 class Cookbook
   attr_accessor :title
 
-  def intitialize(title)
+  def initialize(title)
   	@title = title
+  	@recipes = []
+  end
+
+  def add_recipe(recipe)
+  	@recipes << recipe
+  	puts "Added a recipe to the collection: #{recipe.title}"
+  end
+
+  def recipes
+  	@recipes
   end
 end
 
