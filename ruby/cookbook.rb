@@ -18,7 +18,13 @@ class Cookbook
   end
 
   def recipe_ingredients
-  	puts "These are the ingredients for Veggie Burrito: #{@recipes.collect {|recipe| recipe.ingredients }}"
+  	puts "These are the ingredients for #{self.title}: #{@recipes.collect {|recipe| recipe.ingredients }}"
+  end
+
+  def print_cookbook
+  	@recipes.each do |recipe|
+  	  puts "Title: #{recipe.title}. Ingredients: #{recipe.title}. Steps: #{recipe.steps}"
+  	end
   end
 
   def recipes
