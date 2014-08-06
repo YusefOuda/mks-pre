@@ -18,13 +18,19 @@ class Cookbook
   end
 
   def recipe_ingredients
-  	puts "These are the ingredients for #{self.title}: #{@recipes.collect {|recipe| recipe.ingredients }}"
+    @recipes.each do |recipe|
+  	  puts "These are the ingredients for #{recipe.title}: #{recipe.ingredients}"
+    end
   end
 
   def print_cookbook
   	@recipes.each do |recipe|
-  	  puts "Title: #{recipe.title}. Ingredients: #{recipe.title}. Steps: #{recipe.steps.each_with_index { |step, index| puts (index + 1).to_s << ": " << step }}"
+  	  puts "Title: #{recipe.title}. Ingredients: #{recipe.ingredients.join(', ')}. Steps: #{recipe.steps.each_with_index { |step, index| (index + 1).to_s << ": " << step}}"
   	end
+  end
+
+  def delete_recipe(recipe)
+    @recipes.delete(recipe)
   end
 
   def recipes
@@ -44,6 +50,6 @@ class Recipe
   end
 
   def print_recipe
-  	puts "Title: #{@title}. Ingredients: #{@ingredients.join(', ')}. Steps: #{@steps.each_with_index { |step, index| puts (index + 1).to_s << ": " << step}}"
+  	puts "Title: #{@title}. Ingredients: #{@ingredients.join(', ')}. Steps: #{@steps}"
   end
 end
