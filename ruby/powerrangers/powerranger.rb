@@ -49,6 +49,10 @@ class PowerRanger < Person
     @caffeine_level -= 2
     puts "The #{@color} power ranger takes a lengthy nap. Strength increased to #{@strength} and caffeine level decreased to #{@caffeine_level}."
   end
+
+  def use_megazord(person)
+    puts "#{@name} used megazord! #{person.name} was knocked out of commission."
+  end
 end
 
 class EvilNinja
