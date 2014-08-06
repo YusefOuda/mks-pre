@@ -1,3 +1,17 @@
+module Fight
+  def punch(person)
+    if @strength < 5
+      person.scream
+      person.run
+    else
+      puts "#{person.name} was someraulted into the air!"
+      person.caffeine_level -= 5
+      puts "#{person.name}'s caffeine level was decreased to #{person.caffeine_level}"
+    end
+    @caffeine_level -= 5
+  end
+end
+
 class Person
   attr_accessor :caffeine_level
   attr_reader :name
@@ -27,22 +41,11 @@ class Person
 end
 
 class PowerRanger < Person
+  include Fight
   def initialize(name, caffeine_level=10, strength=3, color='blue')
   	super(name, caffeine_level)
   	@strength = strength
   	@color = color
-  end
-
-  def punch(person)
-    if @strength < 5
-      person.scream
-      person.run
-    else
-      puts "#{person.name} was someraulted into the air!"
-      person.caffeine_level -= 5
-      puts "#{person.name}'s caffeine level was decreased to {person.caffeine_level}"
-    end
-    @caffeine_level -= 5
   end
 
   def rest
@@ -57,23 +60,11 @@ class PowerRanger < Person
 end
 
 class EvilNinja < Person
+  include Fight
   def initialize(name, caffeine_level=10, strength=3, evilness=10)
     super(name, caffeine_level)
     @strength = strength
     @evilness = evilness
-  end
-
-  def punch(person)
-    if @strength < 5
-      person.scream
-      person.run
-    else
-      puts "#{person.name} was someraulted into the air!"
-      person.caffeine_level -= 5
-      puts "#{person.name}'s caffeine level was decreased to {person.caffeine_level}"
-    end
-    @caffeine_level -= 5
-    @evilness += 10
   end
 
   def cause_mayhem(person)
@@ -86,19 +77,19 @@ def fight_scene(p1, p2, pr1, pr2, en1, en2)
   p1.run
   p2.scream
   p1.drink_coffee
-  pr1.punch(p1)
+  pr1.punch(en2)
   pr2.rest
   pr2.use_megazord(pr1)
-  en1.punch(en2)
-  en2.cause_mayhem(p2)
+  en1.punch(pr2)
+  en2.cause_mayhem(pr1)
 end
 
 # test code
 p1 = Person.new("Goku")
 p2 = Person.new("Gohan", 15)
-pr1 = PowerRanger.new("Trunks", 10, 5, 'purple')
-pr2 = PowerRanger.new("Vegeta", 12, 6, 'black')
+pr1 = PowerRanger.new("Trunks", 10, 10, 'purple')
+pr2 = PowerRanger.new("Vegeta", 12, 6, 'yellow')
 en1 = EvilNinja.new("Frieza", 3, 15, 100)
-en2 = EvilNinja.new("Cell", 2, 20, 120)
+en2 = EvilNinja.new("Cell", 7, 4, 120)
 
 fight_scene(p1, p2, pr1, pr2, en1, en2)
