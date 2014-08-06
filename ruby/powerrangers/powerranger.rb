@@ -42,6 +42,13 @@ class PowerRanger < Person
       puts "#{person.name}'s caffeine level was decreased to {person.caffeine_level}"
     end
     @caffeine_level -= 5
+  end
+
+  def rest
+    @strength += 2
+    @caffeine_level -= 2
+    puts "The #{@color} power ranger takes a lengthy nap. Strength increased to #{@strength} and caffeine level decreased to #{@caffeine_level}."
+  end
 end
 
 class EvilNinja
