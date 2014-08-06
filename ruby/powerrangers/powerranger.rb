@@ -1,5 +1,6 @@
 class Person
   attr_accessor :caffeine_level
+  attr_reader :name
 
   def initialize(name, caffeine_level=10)
 	  @name = name
@@ -76,7 +77,7 @@ class EvilNinja < Person
   end
 
   def cause_mayhem(person)
-    puts "#{@name} caused mayhem! Drained #{person.name}'s caffeine_level down to 0"
+    puts "#{@name} caused mayhem! Drained #{person.name}'s caffeine level down to 0"
     person.caffeine_level = 0
   end
 end
@@ -91,3 +92,13 @@ def fight_scene(p1, p2, pr1, pr2, en1, en2)
   en1.punch(en2)
   en2.cause_mayhem(p2)
 end
+
+# test code
+p1 = Person.new("Goku")
+p2 = Person.new("Gohan", 15)
+pr1 = PowerRanger.new("Trunks", 10, 5, 'purple')
+pr2 = PowerRanger.new("Vegeta", 12, 6, 'black')
+en1 = EvilNinja.new("Frieza", 3, 15, 100)
+en2 = EvilNinja.new("Cell", 2, 20, 120)
+
+fight_scene(p1, p2, pr1, pr2, en1, en2)
