@@ -26,7 +26,7 @@ class Person
 end
 
 class PowerRanger < Person
-  def initialize(name, caffeine_level=10, strength, color)
+  def initialize(name, caffeine_level=10, strength=3, color='blue')
   	super(name, caffeine_level)
   	@strength = strength
   	@color = color
@@ -55,5 +55,39 @@ class PowerRanger < Person
   end
 end
 
-class EvilNinja
+class EvilNinja < Person
+  def initialize(name, caffeine_level=10, strength=3, evilness=10)
+    super(name, caffeine_level)
+    @strength = strength
+    @evilness = evilness
+  end
+
+  def punch(person)
+    if @strength < 5
+      person.scream
+      person.run
+    else
+      puts "#{person.name} was someraulted into the air!"
+      person.caffeine_level -= 5
+      puts "#{person.name}'s caffeine level was decreased to {person.caffeine_level}"
+    end
+    @caffeine_level -= 5
+    @evilness += 10
+  end
+
+  def cause_mayhem(person)
+    puts "#{@name} caused mayhem! Drained #{person.name}'s caffeine_level down to 0"
+    person.caffeine_level = 0
+  end
+end
+
+def fight_scene(p1, p2, pr1, pr2, en1, en2)
+  p1.run
+  p2.scream
+  p1.drink_coffee
+  pr1.punch(p1)
+  pr2.rest
+  pr2.use_megazord(pr1)
+  en1.punch(en2)
+  en2.cause_mayhem(p2)
 end
