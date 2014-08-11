@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title>Guess the Number!</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  // Exercise 4.1
+  var secretNumber = parseInt(Math.random() * 100, 10) + 1;
+  var landmineNumber = parseInt(Math.random() * 100, 10) + 1;
+  if (secretNumber === landmineNumber) {
+  	landmineNumber += 1;
+  }
+
+  var getGuess = function() {
+  	var userGuess = prompt("Please guess a number between 1 and 100");
+  	userGuess = parseInt(userGuess, 10);
+  	checkGuess(userGuess, secretNumber);
+  };
+
+  var checkGuess = function(guess, secret) {
+  	if (guess === landmineNumber) {
+  		alert("You lose! You guessed the landmine number.");
+  	}
+  	else if (guess > secret) {
+  		alert("Pick a lower number! You are " + Math.abs(guess - landmineNumber) + " away from the landmine number.");
+  		getGuess();
+  	}
+  	else if (guess < secret) {
+  		alert("Pick a higher number! You are " + Math.abs(guess - landmineNumber) + " away from the landmine number.");
+  		getGuess();
+  	}
+  	else if (guess === secret) {
+  		alert("You guessed it! Congratulations!");
+  	}
+  };
+
+  getGuess();
+</script>
+</body>
+</html>
