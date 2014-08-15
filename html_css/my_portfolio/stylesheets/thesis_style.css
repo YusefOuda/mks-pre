@@ -1,0 +1,25 @@
+p {
+	font-family: "Open Sans"
+}
+
+h1 {
+	font-family: "Shadows Into Light";
+	text-transform: uppercase;
+}
+
+h2 {
+	font-family: "Shadows Into Light";
+}
+
+a {
+	font-size: 10px;
+}
+
+a:hover {
+	color:red;
+}
+
+.author {
+	font-family: "Condiment";
+	font-style: italic;
+}
