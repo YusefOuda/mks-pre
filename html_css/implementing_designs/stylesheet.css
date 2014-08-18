@@ -1,0 +1,112 @@
+body {
+	background-image: url("first-full-layout/agency/background.jpg");
+	margin: 0;
+	position: relative;
+}
+
+.header {
+	position: absolute;
+	right:0;
+	left:0;
+	background: white;
+}
+
+.logo {
+	float: left;
+	margin-left: 15%;
+	padding: 5px;
+}
+
+
+.navbar {
+	margin:0 15% 0 0;
+}
+
+
+.navbar li {
+	list-style: none;
+	float: right;
+	display: block;
+	line-height: 44px;
+}
+
+.navbar li:hover {
+	background: black;
+}
+
+.navbar li:hover > a {
+	color: white;
+}
+
+.navbar li a {
+	text-decoration: none;
+	color: black;
+	padding: 10px;
+	font-family: "Open Sans";
+	font-size: .75em;
+	font-weight: 700;
+
+}
+.main-body {
+	float: left;
+	padding-top: 44px;
+}
+
+.title h3 {
+	font-family: "Open Sans";
+	color: white;
+	font-size: 1.5em;
+	margin: 20px 0 50px 0;
+}
+
+#bar {
+	font-size:1em;
+	color:red;
+}
+
+
+.container {
+	margin: 0 15% 0 15%;
+}
+
+.project img {
+	width: 100%;
+}
+
+.caption {
+	width: 100%;
+	background: white;
+	text-align: center;
+	margin-top:-4px;
+}
+
+.caption h3 {
+	margin: 0;
+	color: #d4d4d4;
+	font-family: "Open Sans";
+	font-size: .75em;
+	padding: 13px;
+}
+
+
+.project {
+	float:left;
+	width:31%;
+	padding-bottom: 3.33%;
+}
+
+#project-1 {
+	padding-right: 3.33%;
+}
+
+#project-2 {
+	padding-right: 3.33%;
+}
+
+#project-4 {
+	padding-right: 3.33%;
+}
+
+#project-5 {
+	padding-right: 3.33%;
+}
