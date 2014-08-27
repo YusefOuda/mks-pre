@@ -1,0 +1,1 @@
+This is a repository to document my work and progress at MakerSquare, a 12-week web development bootcamp.
